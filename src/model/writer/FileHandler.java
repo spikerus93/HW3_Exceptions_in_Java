@@ -10,8 +10,9 @@ public class FileHandler implements Writable{
     public void save(Contact contact) throws MyExceptions {
         String filePath = "src/contacts/" + contact.getLastName() + ".txt";
         File file = new File(filePath);
-        try (FileWriter  writer = new FileWriter(file, true)) {
+        try (FileWriter writer = new FileWriter(file, true)) {
             if (file.length() > 0) {
+                writer.write(contact.toString());
                 writer.write("\n");
             }
         } catch (IOException e) {

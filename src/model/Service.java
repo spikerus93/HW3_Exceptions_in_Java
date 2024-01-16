@@ -4,6 +4,7 @@ import model.exceptions.MyExceptions;
 import model.writer.Writable;
 
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ public class Service {
     private String save(Contact contact) {
         try {
             writable.save(contact);
-        } catch (MyExceptions e) {
+        } catch (MyExceptions | IOException e) {
             System.out.println(e.getMessage());
         }
         return contact.getInfo();
@@ -127,7 +128,7 @@ public class Service {
                 if (personalInfo.get(i).equals("m") | personalInfo.get(i).equals("f")) {
                     gender = personalInfo.remove(i);
                 } else {
-                    throw new MyExceptions("Пол введен некорретно.");
+                    throw new MyExceptions("Пол введен некорректно.");
                 }
             }
         }

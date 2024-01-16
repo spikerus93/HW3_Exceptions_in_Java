@@ -69,8 +69,10 @@ public class Contact implements Serializable {
         getInfo.append(middleName);
         getInfo.append("Дата Рождения: ");
         getInfo.append(birthDate);
+        getInfo.append(" ");
         getInfo.append("Номер телефона: ");
         getInfo.append(phoneNumber);
+        getInfo.append(" ");
         getInfo.append("Пол: ");
         getInfo.append(gender);
         return getInfo.toString();
