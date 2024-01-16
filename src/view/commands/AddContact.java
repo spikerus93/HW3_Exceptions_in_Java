@@ -1,5 +1,7 @@
 package view.commands;
 
+import model.exceptions.MyExceptions;
+
 public class AddContact extends Command {
     public AddContact(ConsoleUI consoleUI){
         super(consoleUI);
@@ -7,7 +9,7 @@ public class AddContact extends Command {
     }
 
     @Override
-    public void execute() {
+    public void execute() throws MyExceptions {
         consoleUI.addContact();
     }
 }

@@ -1,5 +1,7 @@
 package view.commands;
 
+import model.exceptions.MyExceptions;
+
 public abstract class Command {
     String description;
     ConsoleUI consoleUI;
@@ -12,5 +14,5 @@ public abstract class Command {
         return description;
     }
 
-    public abstract  void execute();
+    public abstract  void execute() throws MyExceptions;
 }

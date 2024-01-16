@@ -19,12 +19,12 @@ public class Presenter{
         service.setWritable(writable);
     }
 
-    public void addContact (String text) {
+    public void addContact (String text) throws MyExceptions {
         String line;
         try {
             line = service.addContact(text);
-        } catch (MyExceptions e) {
-            throw new RuntimeException(e.getMessage());
+        } catch (RuntimeException e) {
+            throw new MyExceptions(e.getMessage());
         }
         view.answer("Успешно!\n");
         view.answer(line);

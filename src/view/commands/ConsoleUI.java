@@ -1,5 +1,6 @@
 package view.commands;
 
+import model.exceptions.MyExceptions;
 import model.writer.Writable;
 import presenter.Presenter;
 
@@ -19,7 +20,7 @@ public class ConsoleUI implements View {
     }
 
     @Override
-    public void start() {
+    public void start() throws MyExceptions {
         hello();
         while (work){
             printMenu();
@@ -36,7 +37,7 @@ public class ConsoleUI implements View {
         answer(menu.getMenu());
     }
 
-    private void execute() {
+    private void execute() throws MyExceptions {
         String input = scanner.nextLine();
         if (checkNumber(input)) {
             int numCommand = Integer.parseInt(input);
@@ -82,7 +83,7 @@ public class ConsoleUI implements View {
         scanner.close();
     }
 
-    public void addContact() {
+    public void addContact() throws MyExceptions {
         String text;
         answer("(\"Введите следующие данные через пробел в произвольном порядке: \" +\n" +
                 "\"ФИО, дата рождения в формате ГГГГ.ММ.ДД, номер телефона, пол (m ");

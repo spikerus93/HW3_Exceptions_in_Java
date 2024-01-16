@@ -12,9 +12,9 @@ public class FileHandler implements Writable{
         File file = new File(filePath);
         try (FileWriter writer = new FileWriter(file, true)) {
             if (file.length() > 0) {
-                writer.write(contact.toString());
                 writer.write("\n");
             }
+            writer.write(contact.toString());
         } catch (IOException e) {
             throw new MyExceptions("Ошибка записи в файл.");
         }

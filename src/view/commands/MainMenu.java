@@ -1,5 +1,7 @@
 package view.commands;
 
+import model.exceptions.MyExceptions;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +27,7 @@ public class MainMenu {
         return sb.toString();
     }
 
-    public void execute(int choice) {
+    public void execute(int choice) throws MyExceptions {
         Command command = commandList.get(choice-1);
         command.execute();
     }
