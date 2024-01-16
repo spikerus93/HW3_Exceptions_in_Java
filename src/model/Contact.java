@@ -11,7 +11,7 @@ public class Contact implements Serializable {
     private long phoneNumber;
     private String gender;
 
-    public String getLastName(String lastName) {
+    public String getLastName() {
         return lastName;
     }
 

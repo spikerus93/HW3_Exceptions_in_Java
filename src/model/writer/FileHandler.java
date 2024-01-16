@@ -8,7 +8,7 @@ import java.io.*;
 public class FileHandler implements Writable{
     @Override
     public void save(Contact contact) throws MyExceptions {
-        String filePath = "src/contacts/";
+        String filePath = "src/contacts/" + contact.getLastName() + ".txt";
         File file = new File(filePath);
         try (FileWriter  writer = new FileWriter(file, true)) {
             if (file.length() > 0) {
